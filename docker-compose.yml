@@ -1,0 +1,11 @@
+Squid:
+  image: proxy
+  ports:
+    - "3128:3128"
+  volumes:
+    - ./cache:/var/spool/squid
+    - ./log:/var/log/squid
+    - ./squid.conf:/etc/squid/squid.conf
+  environment:
+    - "TZ=Asia/Taipei"
+  restart: always
